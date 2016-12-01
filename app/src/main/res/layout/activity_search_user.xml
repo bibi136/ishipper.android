@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.framgia.ishipper.ui.activity.SearchUserActivity">
+    tools:context=".presentation.profile.SearchUserActivity">
 
     <include layout="@layout/toolbar"/>
 

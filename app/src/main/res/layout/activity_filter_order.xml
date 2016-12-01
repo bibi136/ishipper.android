@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.framgia.ishipper.ui.activity.FilterOrderActivity">
+    tools:context="com.framgia.ishipper.presentation.filter.FilterInvoiceActivity">
 
     <include layout="@layout/toolbar"/>
 

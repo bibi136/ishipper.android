@@ -48,7 +48,7 @@
             android:layout_below="@id/layoutSearch"
             android:layout_marginTop="@dimen/all_margin_small"
             app:layoutManager="LinearLayoutManager"
-            tools:context="com.framgia.ishipper.ui.fragment.OrderListFragment"/>
+            tools:context="com.framgia.ishipper.presentation.manager_invoice.ListInvoiceFragment"/>
 
         <RelativeLayout
             android:id="@+id/layout_loading"

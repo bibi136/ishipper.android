@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="Hiện chưa có đơn hàng nào, hãy nhận thêm đơn!"
+            android:text="@string/all_no_invoice"
             android:textSize="@dimen/text_size_content"/>
     </LinearLayout>
 
@@ -92,7 +92,6 @@
             android:drawablePadding="5dp"
             android:padding="@dimen/_10dp"
             android:singleLine="true"
-            android:text="127 Nam du"
             android:textSize="@dimen/text_size_content"/>
 
 
@@ -104,7 +103,6 @@
             android:drawablePadding="5dp"
             android:padding="@dimen/_10dp"
             android:singleLine="true"
-            android:text="27 Phố Huế, Hai Bà Trưng"
             android:textSize="@dimen/text_size_content"/>
 
         <LinearLayout

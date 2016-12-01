@@ -12,12 +12,13 @@ import android.widget.Toast;
 
 import com.framgia.ishipper.R;
 import com.framgia.ishipper.model.Invoice;
-import com.framgia.ishipper.ui.activity.ListShipperRegActivity;
-import com.framgia.ishipper.ui.activity.OrderDetailActivity;
-import com.framgia.ishipper.ui.fragment.NearbyOrderFragment;
-import com.framgia.ishipper.ui.fragment.NearbyShipperFragment;
-import com.framgia.ishipper.ui.fragment.OrderListFragment;
-import com.framgia.ishipper.ui.fragment.ShippingFragment;
+import com.framgia.ishipper.presentation.invoice.detail.InvoiceDetailActivity;
+import com.framgia.ishipper.presentation.invoice.nearby_invoice.NearbyInvoiceFragment;
+import com.framgia.ishipper.presentation.invoice.shipping.ShippingFragment;
+import com.framgia.ishipper.presentation.main.NearbyShipperFragment;
+import com.framgia.ishipper.presentation.manager_invoice.ListInvoiceFragment;
+import com.framgia.ishipper.presentation.manager_shipper_register.ChooseShipperRegisterActivity;
+import com.framgia.ishipper.util.Const;
 
 import static com.framgia.ishipper.ui.activity.MainActivity.SHIPPER;
 import static com.framgia.ishipper.ui.activity.MainActivity.userType;
@@ -26,10 +27,10 @@ import static com.framgia.ishipper.ui.activity.MainActivity.userType;
  * Created by dinhduc on 20/07/2016.
  */
 public class MainTabAdapter extends FragmentPagerAdapter
-        implements OrderListFragment.OnActionClickListener {
+        implements ListInvoiceFragment.OnActionClickListener {
     private String[] mTitle;
     private Context mContext;
-    private OrderListFragment mOrderListFragment;
+    private ListInvoiceFragment mListInvoiceFragment;
     private SparseArray<Fragment> mFragments = new SparseArray<>();
 
     public MainTabAdapter(FragmentManager fm, Context context) {
@@ -52,7 +53,7 @@ public class MainTabAdapter extends FragmentPagerAdapter
     public Fragment getItem(int position) {
         if (position == 0) {
             if (userType == SHIPPER) {
-                return new NearbyOrderFragment();
+                return new NearbyInvoiceFragment();
             } else {
                 return new NearbyShipperFragment();
             }
@@ -60,12 +61,12 @@ public class MainTabAdapter extends FragmentPagerAdapter
             if (userType == SHIPPER) {
                 return new ShippingFragment();
             } else {
-                mOrderListFragment =
-                        OrderListFragment.newInstance(
+                mListInvoiceFragment =
+                        ListInvoiceFragment.newInstance(
                                 mContext.getString(R.string.tab_title_shop_order_wait),
                                 Invoice.STATUS_CODE_INIT);
-                mOrderListFragment.setOnActionClickListener(this);
-                return mOrderListFragment;
+                mListInvoiceFragment.setOnActionClickListener(this);
+                return mListInvoiceFragment;
             }
         }
     }
@@ -82,8 +83,8 @@ public class MainTabAdapter extends FragmentPagerAdapter
 
     @Override
     public void onClickAction(Invoice invoice) {
-        Intent intent = new Intent(mContext, ListShipperRegActivity.class);
-        intent.putExtra(ListShipperRegActivity.KEY_INVOICE_ID, invoice.getId());
+        Intent intent = new Intent(mContext, ChooseShipperRegisterActivity.class);
+        intent.putExtra(Const.KEY_INVOICE_ID, invoice.getId());
         mContext.startActivity(intent);
     }
 
@@ -103,14 +104,14 @@ public class MainTabAdapter extends FragmentPagerAdapter
     @Override
     public void onClickCancel(Invoice invoice) {
         Toast.makeText(mContext, "Đã huỷ đơn", Toast.LENGTH_SHORT).show();
-        mOrderListFragment.notifyChangedData(mContext, null);
+        mListInvoiceFragment.notifyChangedData(null);
     }
 
     @Override
     public void onClickView(Invoice invoice) {
-        Intent intent = new Intent(mContext, OrderDetailActivity.class);
+        Intent intent = new Intent(mContext, InvoiceDetailActivity.class);
         Bundle extras = new Bundle();
-        extras.putInt(OrderDetailActivity.KEY_INVOICE_ID, invoice.getId());
+        extras.putInt(Const.KEY_INVOICE_ID, invoice.getId());
         intent.putExtras(extras);
         mContext.startActivity(intent);
     }

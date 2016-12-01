@@ -31,6 +31,7 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
+import com.google.android.gms.maps.model.LatLng;
 
 /**
  * Created by framgia on 18/08/2016.
@@ -62,10 +63,10 @@ public class CommonUtils {
             GoogleApiClient googleApiClient,
             final LocationSettingCallback callback) {
         LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder()
-                .setAlwaysShow(true)
-                .addLocationRequest(createLocationRequest());
+            .setAlwaysShow(true)
+            .addLocationRequest(createLocationRequest());
         PendingResult<LocationSettingsResult> result = LocationServices.SettingsApi
-                .checkLocationSettings(googleApiClient, builder.build());
+            .checkLocationSettings(googleApiClient, builder.build());
         result.setResultCallback(new ResultCallback<LocationSettingsResult>() {
             @Override
             public void onResult(@NonNull LocationSettingsResult locationSettingsResult) {
@@ -83,7 +84,7 @@ public class CommonUtils {
                         break;
                     case LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE:
                         Toast.makeText(activity, R.string.all_location_not_available,
-                                Toast.LENGTH_SHORT).show();
+                            Toast.LENGTH_SHORT).show();
                         break;
                 }
             }
@@ -101,7 +102,7 @@ public class CommonUtils {
     public static void makePhoneCall(Context context, String number) {
         Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + number));
         if (ActivityCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE) !=
-                PackageManager.PERMISSION_GRANTED) {
+            PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
@@ -128,7 +129,7 @@ public class CommonUtils {
 
     public static boolean stringIsValid(String str) {
         if (str != null && !str.trim().equals("")
-                && !str.toLowerCase().equals("null")) {
+            && !str.toLowerCase().equals("null")) {
             return true;
         }
         return false;
@@ -163,5 +164,39 @@ public class CommonUtils {
         params.height = totalItemsHeight + totalDividersHeight;
         listView.setLayoutParams(params);
         listView.requestLayout();
+    }
+
+    /**
+     * place the path in center of screen
+     *
+     * @param startPoint start point of path
+     * @param endPoint   end point of pat
+     * @return
+     */
+    public static LatLng configLatLng(LatLng startPoint, LatLng endPoint) {
+        double diffHeight = startPoint.latitude - endPoint.latitude;
+        double diffWidth = startPoint.longitude - endPoint.longitude;
+        double scale = 1;
+        LatLng latLng;
+        if (Math.abs(diffHeight) > Math.abs(diffWidth)) {
+            if (diffHeight > 0) {
+                latLng =
+                        new LatLng(endPoint.latitude - scale * diffHeight - Math.abs(diffWidth) / 2,
+                                (startPoint.longitude + endPoint.longitude) / 2);
+            } else {
+                latLng =
+                        new LatLng(startPoint.latitude + scale * diffHeight - Math.abs(diffWidth) / 2,
+                                (startPoint.longitude + endPoint.longitude) / 2);
+            }
+        } else {
+            if (diffWidth > 0) {
+                latLng = new LatLng(startPoint.latitude - scale * diffWidth,
+                        (startPoint.longitude + endPoint.longitude) / 2);
+            } else {
+                latLng = new LatLng(endPoint.latitude + scale * diffWidth,
+                        (startPoint.longitude + endPoint.longitude) / 2);
+            }
+        }
+        return latLng;
     }
 }

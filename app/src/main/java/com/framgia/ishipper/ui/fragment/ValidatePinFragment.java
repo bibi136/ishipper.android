@@ -18,6 +18,7 @@ import com.framgia.ishipper.net.API;
 import com.framgia.ishipper.net.APIResponse;
 import com.framgia.ishipper.net.data.EmptyData;
 import com.framgia.ishipper.net.data.SignUpData;
+import com.framgia.ishipper.presentation.authenication.update_pass.ResetPasswordNewFragment;
 import com.framgia.ishipper.ui.activity.MainActivity;
 import com.framgia.ishipper.util.CommonUtils;
 import com.framgia.ishipper.util.InputValidate;

@@ -17,6 +17,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 import java.io.IOException;
 import java.util.List;
@@ -30,6 +31,9 @@ public class MapUtils {
     private static final String TAG = "MapUtils";
 
     private static final int MARKER_FADE_DURATION = 500;
+    private static final int MAP_PADDING = 30;
+
+    public static final float MAP_PADDING_PERCENT = 0.12f;
 
     /**
      * Route between 2 point start & end
@@ -59,9 +63,20 @@ public class MapUtils {
         }
         LatLngBounds bounds = builder.build();
 
-        int padding = (int) (width * 0.12);
+        int padding = (int) (width * MAP_PADDING_PERCENT);
 
         CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, width, height, padding);
+        googleMap.animateCamera(cu);
+    }
+
+    public static void updateZoomMap(GoogleMap googleMap, List<LatLng> points) {
+        LatLngBounds.Builder builder = new LatLngBounds.Builder();
+        for (LatLng item : points) {
+            builder.include(item);
+        }
+        LatLngBounds bounds = builder.build();
+
+        CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, MAP_PADDING);
         googleMap.animateCamera(cu);
     }
 
@@ -162,5 +177,18 @@ public class MapUtils {
             }
         });
         ani.start();
+    }
+
+    public static void zoomToBounds(GoogleMap map, PolylineOptions p)
+    {
+        LatLngBounds.Builder builder = new LatLngBounds.Builder();
+        List<LatLng> arr = p.getPoints();
+        for(int i = 0; i < arr.size();i++){
+            builder.include(arr.get(i));
+        }
+        LatLngBounds bounds = builder.build();
+        int padding = MAP_PADDING; // offset from edges of the map in pixels
+        CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
+        map.animateCamera(cu);
     }
 }

@@ -2,7 +2,6 @@
     <string name="app_name">iShipper</string>
     <string name="shop">Shop</string>
     <string name="shipper">Shipper</string>
-    <string name="title_activity_maps">Map</string>
 
     <!--    Permissions    -->
     <string name="permission_rationale_location">Access to the location service is required to demonstrate the \'my location\' feature, which shows your current location on the map.</string>
@@ -12,15 +11,7 @@
 
     <string name="title_activity_notification">Notifications</string>
     <string name="title_activity_order_manager">Quản lý đơn hàng</string>
-    <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
     <string name="time_order">Time</string>
-    <string name="order_price">Order Price</string>
-    <string name="ship_price">Ship price</string>
-    <string name="time_sample">1.5h</string>
-    <string name="text_order_sample">450K</string>
-    <string name="text_ship_price_sample">45K</string>
-    <string name="start_address_sample">434 Trần Khát Chân - Hai Bà Trưng - Hà Nội</string>
     <string name="tab_title_all">TẤT CẢ</string>
     <string name="tab_title_order_wait">CHỜ SHOP CHỌN</string>
     <string name="tab_title_take_order">LẤY HÀNG</string>
@@ -32,7 +23,6 @@
     <string name="nav_nearby_order_item">Đơn hàng xung quanh</string>
     <string name="nav_fb_order_item">Đơn hàng từ Facebook</string>
     <string name="nav_order_management_item">Quản lý đơn hàng</string>
-    <string name="nav_rate_us_item">Đánh giá</string>
     <string name="nav_inform_item">Thông tin</string>
     <string name="nav_sign_out_item">Đăng xuất</string>
     <string name="drawer_open">Drawer Open</string>
@@ -40,7 +30,6 @@
     <string name="all_nearby_order">Xung quanh</string>
     <string name="all_shipping_order">Đang giao</string>
     <string name="nav_user_name_example">Nguyen Dinh Duc</string>
-    <string name="all_search_hint">Tìm kiếm</string>
     <string name="activity_search_title">Tìm kiếm</string>
 
     <string name="suggest_path">Gợi ý đường đi</string>
@@ -52,14 +41,11 @@
     <string name="order_status_delivered">Đã giao</string>
     <string name="order_status_finished">Kết thúc</string>
     <string name="order_status_cancelled">Huỷ</string>
-    <string name="end_address_sample">Tầng 13, Keangnam - Phạm Hùng - Cầu Giấy - Hà Nội</string>
     <string name="tab_title_unknow">Unknow</string>
     <string name="tab_title_shop_order_wait">CHỜ SHIPPER NHẬN</string>
     <string name="tab_title_shop_take_order">CHỜ LẤY HÀNG</string>
     <string name="order_shop_status_wait">Chờ shipper nhận</string>
     <string name="order_shop_status_take">Chờ lấy hàng</string>
-    <string name="from">Từ</string>
-    <string name="to">Đến</string>
     <string name="cancelled">HUỶ ĐƠN</string>
     <string name="action">action</string>
     <string name="action_shop_wait">CHỌN SHIPPER</string>
@@ -69,20 +55,12 @@
     <string name="nav_create_order_item">Tạo đơn hàng</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="map_start_point">Điểm đầu</string>
     <string name="map_end_point">Điểm cuối</string>
-    <string name="note">Note</string>
     <string name="text_order_name">Tên đơn hàng</string>
-    <string name="order_name_sample">Quần áo</string>
     <string name="text_order_price">Tiền hàng</string>
-    <string name="order_price_sample">500.000đ</string>
     <string name="text_ship_price">Tiền ship</string>
-    <string name="ship_price_sample">50.000đ</string>
-    <string name="time_create_order_fragment">Giờ giao hàng</string>
-    <string name="name_customer_create_order_fragment">Tên khách hàng</string>
     <string name="submit_create_order_fragment">Tiếp tục</string>
-    <string name="phone_number_create_order_fragment">Số điện thoại</string>
     <string name="pick_time_now">Giao ngay</string>
     <string name="pick_time_today_morning">Sáng nay</string>
     <string name="pick_time_today_afternoon">Chiều nay</string>
@@ -90,7 +68,6 @@
     <string name="pick_time_today_select">Chọn giờ cụ thể trong ngày</string>
     <string name="today">hôm nay</string>
     <string name="all_show_path">Chỉ đường</string>
-    <string name="all_order_confirm">Nhận đơn</string>
     <string name="all_filter">Filter</string>
     <string name="all_notification">Notification</string>
     <string name="all_ship_price">Tiền ship</string>
@@ -104,47 +81,35 @@
     <string name="all_done_order">Đã giao hàng</string>
     <string name="all_order_name">Tên đơn hàng</string>
     <string name="all_note">Ghi chú</string>
-    <string name="all_shop_name">Tên cửa hàng</string>
     <string name="all_phone_number">Di động</string>
-    <string name="all_shop_fb">Facebook</string>
     <string name="detail_shop_infor"><u>Thông tin shop</u></string>
     <string name="detail_customer_infor"><u>Thông tin khách hàng</u></string>
     <string name="all_customer_name">Tên khách hàng</string>
     <string name="all_customer_phone">Số điện thoại</string>
-    <string name="all_customer_call">Gọi cho khách hàng</string>
-    <string name="all_shop_call">Gọi cho shop</string>
     <string name="pick_time_tomorrow_morning">Sáng mai</string>
     <string name="pick_time_tomorrow_afternoon">Chiều mai</string>
     <string name="pick_time_tomorrow_evening">Tối mai</string>
     <string name="pick_time_tomorrow_select">Chọn giờ cụ thể ngày mai</string>
     <string name="tomorrow">ngày mai</string>
-    <string name="all_create_order">Tạo đơn</string>
     <string name="detail_order_info"><u>Thông tin đơn hàng</u></string>
     <string name="detail_path"><u>Đường đi</u></string>
-    <string name="all_show_detail">Xem chi tiết</string>
     <string name="detail_shipper_infor"><u>Thông tin shipper</u></string>
-    <string name="all_shipper_name">Tên shipper</string>
-    <string name="all_shipper_call">Gọi cho shipper</string>
     <string name="accept">CHẤP NHẬN</string>
-    <string name="verified">Đã xác nhận</string>
     <string name="username_login">Số điện thoại</string>
     <string name="all_password">Mật khẩu</string>
     <string name="login">Đăng nhập</string>
     <string name="register">Đăng kí</string>
     <string name="activity_login_forgot_pass"><u>Quên mật khẩu?</u></string>
     <string name="forgot_pass">Quên mật khẩu</string>
-    <string name="email">Email</string>
     <string name="name">Họ tên</string>
     <string name="plate">Biển số xe</string>
     <string name="name_shop">Tên shop</string>
-    <string name="all_phone_sample">+84976 990 043</string>
     <string name="all_plate_sample">30K1 56789</string>
     <string name="all_search_area">Khu vực tìm kiếm</string>
     <string name="nav_order_total">Tổng đơn:</string>
     <string name="nav_success_order">Đơn thành công:</string>
     <string name="all_address_sample">Nguyễn Khoái, Hoàng Mai, Hà Nội</string>
     <string name="all_password_confirm">Nhập lại mật khẩu</string>
-    <string name="send">Gửi</string>
     <string name="confirm_phone_input">Nhập mã số xác nhận của bạn</string>
     <string name="input_your_number">Nhập số điện thoại của bạn</string>
     <string name="next">Tiếp</string>
@@ -152,10 +117,8 @@
     <string name="message_phone_validate_sent">Chúng tôi vừa gửi một mã xác nhận tới số điện thoại của bạn. Vui lòng nhập mã xác nhận tới số %1$s.</string>
     <string name="profile_user_name">Họ và tên</string>
     <string name="profile_plate">Biển số xe</string>
-    <string name="profile_email">Email</string>
     <string name="profile_phone">Số điện thoại</string>
     <string name="profile_address">Địa chỉ</string>
-    <string name="user_profile_title">Thông tin tài khoản</string>
     <string name="all_update">CẬP NHẬT</string>
     <string name="register_success">Đăng ký thành công</string>
     <string name="new_password">Mật khẩu mới</string>
@@ -176,8 +139,6 @@
     <string name="dialog_input_password">Nhập mật khẩu</string>
     <string name="create_order">TẠO ĐƠN HÀNG</string>
     <string name="text_order_weight">Khối lượng</string>
-    <string name="all_price_order">Tiền hàng</string>
-    <string name="all_weight">Cân nặng</string>
     <string name="all_filter_order">Lọc đơn</string>
     <string name="filter_area">Khu vực</string>
     <string name="filter_radius">Bán kính (km)</string>
@@ -190,18 +151,13 @@
     <string name="invoice_weight_unit">Kg</string>
     <string name="price_unit">VNĐ</string>
     <string name="fragment_shipping_note">Note:</string>
-    <string name="dialog_report">Report</string>
     <string name="all_send">Gửi</string>
     <string name="dialog_review">Đánh giá</string>
     <string name="all_cant_get_location">Can\'t get location</string>
     <string name="all_location_not_available">Location Service is not available</string>
     <string name="accept_shipper_success">Đã chọn shipper thành công</string>
-    <string name="create_order_distance">Khoảng cách (km)</string>
     <string name="detail_receive_order">Nhận đơn</string>
     <string name="detail_cancel_register">Hủy đăng ký</string>
-    <string name="detail_cancel_order">Hủy đơn hàng</string>
-    <string name="dialog_cancel_order_title">Hủy đơn hàng</string>
-    <string name="dialog_cancel_order_message">Bạn có muốn hủy đơn hàng này không</string>
     <string name="report">Báo cáo</string>
     <string name="message_back_to_exit">Please click BACK again to exit</string>
     <string name="text_distance">"Khoảng cách: %1$.2f km."</string>
@@ -217,7 +173,6 @@
     <string name="title_activity_route">Chỉ đường</string>
     <string name="title_activity_create_invoice">Tạo đơn hàng</string>
     <string name="all_rating">Rating</string>
-    <string name="all_report">Report</string>
     <string name="message_report_dialog">Bạn có muốn report không?</string>
     <string name="all_invoice_status"><u>Trạng thái</u></string>
     <string name="search_hint">&#160;&#160;&#160;&#160;&#160;Tìm kiếm</string>
@@ -234,9 +189,6 @@
     <string name="info_dialog_success_order">Thành công</string>
     <string name="title_shipper_management">Shipper yêu thích</string>
     <string name="title_black_list_shipper">Black List</string>
-    <string name="success_invoice">Đơn hàng thành công:</string>
-    <string name="full_name">Họ tên :</string>
-    <string name="distance">Khoảng cách :</string>
     <string name="setting_notification_title">Bật/Tắt thông báo</string>
     <string name="fragment_setting_invoice_radius">Bán kính nhận đơn: %1$d km</string>
     <string name="nav_setting_item">Cài đặt</string>
@@ -249,15 +201,12 @@
     <string name="nav_shop_management_item">Cửa hàng yêu thích</string>
     <string name="all_add">Add</string>
     <string name="add">Thêm</string>
-    <string name="add_action_fail">Thêm vào bị lỗi.</string>
     <string name="menu_delete_all">Delete All</string>
     <string name="delete_all_dialog_message">Do you want to delete all?</string>
     <string name="delete_all_dialog_title">Delete</string>
     <string name="toast_delete_all">Deleted All</string>
     <string name="item_user_unblock">Xoá</string>
     <string name="dialog_remove_user_from_blacklist">Xoá khỏi blacklist?</string>
-    <string name="dialog_remove">Xoá</string>
-    <string name="dialog_cancel">Huỷ</string>
     <string name="dialog_remove_user_from_favorite">Xoá khỏi favorite?</string>
     <string name="dialog_delete_message">Xoá</string>
     <string name="all_customer">Khách hàng</string>
@@ -279,6 +228,10 @@
     <string name="err_google_play_service_not_available">Google Play Service not available</string>
     <string name="not_have_guide_for_route">Không có hướng dẫn chỉ đường cho cung đường này</string>
     <string name="cant_get_guide_for_route">Không lấy được hướng dẫn chỉ đường, xin thử lại sau</string>
+    <string name="fragment_create_order_time_require">Nhập thời gian giao hàng</string>
+    <string name="msg_start_location_require">Bạn chưa nhập điểm đầu</string>
+    <string name="msg_end_location_require">Bạn chưa nhập điểm cuối</string>
+    <string name="all_no_invoice">Hiện chưa có đơn hàng nào, hãy nhận thêm đơn!</string>
     <string name="new_notification">Có tin mới</string>
     <string name="title_menu_save">Save</string>
     <string name="detail_history">Lịch sử đơn hàng</string>

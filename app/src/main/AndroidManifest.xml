@@ -28,7 +28,7 @@
             android:name=".ui.activity.MainActivity"
             android:configChanges="keyboardHidden|screenSize|orientation">
         </activity>
-        <activity android:name=".ui.activity.LoginActivity">
+        <activity android:name=".presentation.authenication.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -36,35 +36,35 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.activity.ListShipperRegActivity"
+            android:name=".presentation.manager_shipper_register.ChooseShipperRegisterActivity"
             android:label="@string/title_activity_list_shipper_reg">
             <intent-filter>
                 <action android:name="com.framgia.ishipper.LIST_SHIPPER_REGISTER"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.OrderDetailActivity">
+        <activity android:name=".presentation.invoice.detail.InvoiceDetailActivity">
             <intent-filter>
                 <action android:name="com.framgia.ishipper.INVOICE_DETAIL"/>
 
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.RouteActivity"/>
+        <activity android:name=".presentation.route.RouteActivity"/>
         <activity android:name=".ui.activity.ShopCreateOrderActivity"/>
-        <activity android:name=".ui.activity.RegisterActivity"/>
-        <activity android:name=".ui.activity.ForgetPasswordActivity"/>
-        <activity android:name=".ui.activity.UserProfileActivity"/>
-        <activity android:name=".ui.activity.SettingActivity">
+        <activity android:name=".presentation.authenication.register.RegisterActivity"/>
+        <activity android:name=".presentation.authenication.update_pass.ForgetPasswordActivity"/>
+        <activity android:name=".presentation.profile.UserProfileActivity"/>
+        <activity android:name=".presentation.settings.SettingActivity">
         </activity>
-        <activity android:name=".ui.activity.SearchUserActivity"/>
-        <activity android:name=".ui.activity.ChangePasswordActivity"/>
+        <activity android:name=".presentation.profile.SearchUserActivity"/>
+        <activity android:name=".presentation.authenication.update_pass.ChangePasswordActivity"/>
         <activity
-            android:name=".ui.activity.FilterOrderActivity"
+            android:name=".presentation.filter.FilterInvoiceActivity"
             android:windowSoftInputMode="stateHidden">
         </activity>
-        <activity android:name=".ui.activity.BlackListActivity"/>
-        <activity android:name=".ui.activity.NotificationActivity"/>
+        <activity android:name=".presentation.block.BlackListActivity"/>
+        <activity android:name=".presentation.notification.NotificationActivity"/>
 
         <service
             android:name=".service.FirebaseInstanceService">

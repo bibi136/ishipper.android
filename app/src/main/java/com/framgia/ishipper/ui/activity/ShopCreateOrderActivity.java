@@ -2,19 +2,18 @@ package com.framgia.ishipper.ui.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 
 import com.framgia.ishipper.R;
+import com.framgia.ishipper.base.BaseToolbarActivity;
 import com.framgia.ishipper.model.Invoice;
-import com.framgia.ishipper.ui.fragment.ShopCreateOrderStep1Fragment;
+import com.framgia.ishipper.presentation.invoice.create_invoice.ShopCreateOrderStep1Fragment;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
-public class ShopCreateOrderActivity extends ToolbarActivity {
+public class ShopCreateOrderActivity extends BaseToolbarActivity {
     private static final String TAG = "ShopCreateOrderActivity";
     public static Invoice sInvoice = new Invoice();
     @BindView(R.id.toolbar) Toolbar mToolbar;
@@ -22,11 +21,6 @@ public class ShopCreateOrderActivity extends ToolbarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.container, new ShopCreateOrderStep1Fragment())
-                .commit();
-
     }
 
     public void addFragment(Fragment fragment) {
@@ -39,17 +33,17 @@ public class ShopCreateOrderActivity extends ToolbarActivity {
     }
 
     @Override
-    Toolbar getToolbar() {
+    public Toolbar getToolbar() {
         return mToolbar;
     }
 
     @Override
-    int getActivityTitle() {
+    public int getActivityTitle() {
         return R.string.title_activity_create_invoice;
     }
 
     @Override
-    int getLayoutId() {
+    public int getLayoutId() {
         return R.layout.activity_shop_create_order;
     }
 
@@ -59,5 +53,13 @@ public class ShopCreateOrderActivity extends ToolbarActivity {
             onBackPressed();
         }
         return true;
+    }
+
+    @Override
+    public void initViews() {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.container, new ShopCreateOrderStep1Fragment())
+                .commit();
     }
 }

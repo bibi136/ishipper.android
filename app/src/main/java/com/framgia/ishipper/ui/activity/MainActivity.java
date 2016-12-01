@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.framgia.ishipper.R;
+import com.framgia.ishipper.base.BaseToolbarActivity;
 import com.framgia.ishipper.common.Config;
 import com.framgia.ishipper.model.Invoice;
 import com.framgia.ishipper.model.SocketResponse;
@@ -26,11 +27,15 @@ import com.framgia.ishipper.model.User;
 import com.framgia.ishipper.net.API;
 import com.framgia.ishipper.net.APIResponse;
 import com.framgia.ishipper.net.data.EmptyData;
-import com.framgia.ishipper.ui.fragment.FacebookInvoiceFragment;
-import com.framgia.ishipper.ui.fragment.FavoriteFragment;
+import com.framgia.ishipper.presentation.authenication.login.LoginActivity;
+import com.framgia.ishipper.presentation.favorite.FavoriteListFragment;
+import com.framgia.ishipper.presentation.fb_invoice.FBInvoiceFragment;
+import com.framgia.ishipper.presentation.manager_invoice.ShipperInvoiceManagerFragment;
+import com.framgia.ishipper.presentation.manager_invoice.ShopInvoiceManagerFragment;
+import com.framgia.ishipper.presentation.notification.NotificationActivity;
+import com.framgia.ishipper.presentation.profile.UserProfileActivity;
+import com.framgia.ishipper.presentation.settings.SettingActivity;
 import com.framgia.ishipper.ui.fragment.MainContentFragment;
-import com.framgia.ishipper.ui.fragment.ShipperOrderManagerFragment;
-import com.framgia.ishipper.ui.fragment.ShopOrderManagerFragment;
 import com.framgia.ishipper.ui.listener.OnInvoiceUpdate;
 import com.framgia.ishipper.ui.listener.OnShipperUpdateListener;
 import com.framgia.ishipper.ui.listener.SocketCallback;
@@ -45,7 +50,7 @@ import org.json.JSONObject;
 
 import butterknife.BindView;
 
-public class MainActivity extends ToolbarActivity implements SocketCallback {
+public class MainActivity extends BaseToolbarActivity implements SocketCallback {
     private static final String TAG = "MainActivity";
 
     @BindView(R.id.toolbar) Toolbar mToolbar;
@@ -69,16 +74,11 @@ public class MainActivity extends ToolbarActivity implements SocketCallback {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initView();
         connectWebSocket(this);
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    private void initView() {
+    public void initViews() {
         mCurrentUser = Config.getInstance().getUserInfo(this);
         if (mCurrentUser.getRole().equals(User.ROLE_SHIPPER)) {
             userType = SHIPPER;
@@ -149,35 +149,35 @@ public class MainActivity extends ToolbarActivity implements SocketCallback {
                 getToolbar().setTitle(getString(R.string.title_activity_order_manager));
                 if (userType == SHIPPER) {
                     fragment =
-                            ShipperOrderManagerFragment.instantiate(MainActivity.this,
-                                    ShipperOrderManagerFragment.class.getName(),
-                                    null);
-                    tag = ShipperOrderManagerFragment.class.getName();
+                            ShipperInvoiceManagerFragment.instantiate(MainActivity.this,
+                                                                      ShipperInvoiceManagerFragment.class.getName(),
+                                                                      null);
+                    tag = ShipperInvoiceManagerFragment.class.getName();
                 } else {
                     fragment =
-                            ShipperOrderManagerFragment.instantiate(MainActivity.this,
-                                    ShopOrderManagerFragment.class.getName(),
-                                    null);
-                    tag = ShipperOrderManagerFragment.class.getName();
+                            ShipperInvoiceManagerFragment.instantiate(MainActivity.this,
+                                                                      ShopInvoiceManagerFragment.class.getName(),
+                                                                      null);
+                    tag = ShipperInvoiceManagerFragment.class.getName();
                 }
                 break;
             case R.id.nav_fb_order:
                 mSelectedId = id;
                 getToolbar().setTitle(getString(R.string.title_facebook_order));
-                fragment = FacebookInvoiceFragment.newInstance(true);
-                tag = FacebookInvoiceFragment.class.getName();
+                fragment = FBInvoiceFragment.newInstance(true);
+                tag = FBInvoiceFragment.class.getName();
                 break;
             case R.id.nav_ship_management:
                 mSelectedId = id;
                 getToolbar().setTitle(getString(R.string.nav_shop_management_item));
-                fragment = FavoriteFragment.newInstance();
-                tag = FavoriteFragment.class.getName();
+                fragment = FavoriteListFragment.newInstance();
+                tag = FavoriteListFragment.class.getName();
                 break;
             case R.id.nav_shop_management:
                 mSelectedId = id;
                 getToolbar().setTitle(getString(R.string.nav_ship_management_item));
-                fragment = FavoriteFragment.newInstance();
-                tag = FavoriteFragment.class.getName();
+                fragment = FavoriteListFragment.newInstance();
+                tag = FavoriteListFragment.class.getName();
                 break;
             case R.id.nav_create_order:
                 startActivity(new Intent(this, ShopCreateOrderActivity.class));
@@ -257,23 +257,18 @@ public class MainActivity extends ToolbarActivity implements SocketCallback {
     }
 
     @Override
-    Toolbar getToolbar() {
+    public Toolbar getToolbar() {
         return mToolbar;
     }
 
     @Override
-    int getActivityTitle() {
+    public int getActivityTitle() {
         return R.string.title_activity_main;
     }
 
     @Override
-    int getLayoutId() {
+    public int getLayoutId() {
         return R.layout.activity_main;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -286,6 +281,7 @@ public class MainActivity extends ToolbarActivity implements SocketCallback {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode != RESULT_OK) return;
         if (requestCode == Const.REQUEST_CHECK_SETTINGS) {
             getSupportFragmentManager()
                     .findFragmentByTag(MainContentFragment.class.getName())

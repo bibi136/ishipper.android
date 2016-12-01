@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.framgia.ishipper.ui.activity.RouteActivity">
+    tools:context="com.framgia.ishipper.presentation.route.RouteActivity">
 
     <include
         android:id="@+id/layoutToolbar"

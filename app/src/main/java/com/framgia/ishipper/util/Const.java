@@ -12,9 +12,11 @@ public class Const {
     public static final int PIN_LENGTH = 8;
     public static final int SETTING_MAX_INVOICE_RADIUS = 14;
     public static final int SETTING_MIN_INVOICE_RADIUS = 1;
+    public static final int SHIPPER_NEARBY_RADIUS = 5;
     public static final int SETTING_INVOICE_RADIUS_DEFAULT = 5;
     public static final String ACTION_NEW_INVOICE = "new_invoice";
     public static final String ACTION_REMOVE_INVOICE = "remove_invoice";
+    public static final int PLACE_AUTOCOMPLETE_REQUEST_CODE = 0x2233;
     public static String VIETNAM_PREFIX = "+84";
     public static int SCREEN_WIDTH;
     public static int SCREEN_HEIGHT;
@@ -28,20 +30,17 @@ public class Const {
     public static final String COMMAND_SUBSCRIBE = "subscribe";
     public static final String IDENTIFIER = "identifier";
     public static final String ACTION_UNREAD_NOTIFICATION = "unread_notification";
-    public static final String ACTION_SHIPPER_ONLINE = "shipper_online";
-    public static final String ACTION_SHIPPER_OFFLINE = "shipper_offline";
-    public static final String KEY_TITLE = "title";
-    public static final String KEY_BODY = "body";
-    public static final String ACTION_NEW_NOTIFICATION = "new_notification";
-    public static final int HEAD_LIST = 0;
+    public static final int SIZE_INVOICE_STATUS = 6;
     public static final String KEY_INVOICE_ID = "invoice_id";
-    public static final String KEY_INVOICE = "invoice";
-    public static final int POSITION_HIGHLIGHT_DEFAULT = -1;
+    public static final int DEFAULT_HIGHLIGHT_POSITION = - 1;
 
     public class RequestCode {
+
         public static final int REQUEST_SEARCH_BLACKLIST = 1;
         public static final int REQUEST_SEARCH_FAVORITE = 2;
+        public static final int REQUEST_CODE_CHOOSE_SHIPPER = 3;
         public static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
+        public static final int PLACE_AUTOCOMPLETE_REQUEST_CODE = 1;
     }
 
     public class ErrorMessage {
@@ -58,10 +57,6 @@ public class Const {
         public static final String KEY_IS_LOGIN = "IsLoginKey";
         public static final String KEY_SETTING_NOTIFICATION = "SettingNotification";
         public static final String KEY_SETTING_INVOICE_RADIUS = "SettingInvoiceRadius";
-        public static final String KEY_SETTING_ADDRESS = "SettingAddress";
-        public static final String KEY_SETTING_LATITUDE = "SettingLatitude";
-        public static final String KEY_SETTING_LONGITUDE = "SettingLongitude";
-        public static final String KEY_SETTING_LOCATION = "SettingLocation";
     }
 
     public class LocationRequest {
@@ -79,13 +74,12 @@ public class Const {
     public class Notification {
         public static final int ON = 1;
         public static final int OFF = 0;
-        public static final int ID = 1;
     }
 
     public class FirebaseData {
-        public static final String CLICK_ACTION = "click_action";
         public static final String INVOICE_ID = "invoice_id";
-        public static final String NOTIFICATION_ID = "notification_id";
+
+        public static final String NOTI_ID = "id";
     }
 
     public class Setting {
@@ -107,10 +101,5 @@ public class Const {
 
     public class Language {
         public static final String VIETNAMESE = "vi";
-    }
-
-    public class IntentFilter {
-        public static final String INVOICE_DETAIL = "com.framgia.ishipper.INVOICE_DETAIL";
-        public static final String LIST_SHIPPER_REGISTER = "com.framgia.ishipper.LIST_SHIPPER_REGISTER";
     }
 }

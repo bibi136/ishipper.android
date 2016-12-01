@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.activity.OrderDetailActivity">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:context=".presentation.invoice.detail.InvoiceDetailActivity">
 
     <include layout="@layout/toolbar"/>
 
@@ -13,8 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/ll_detail_btn_action"
-        android:layout_below="@+id/appbar"
-        android:background="@color/back_ground_light_grey">
+        android:background="@color/back_ground_light_grey"
+        android:layout_below="@+id/appbar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -227,7 +226,6 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:animateLayoutChanges="true"
                     android:orientation="vertical"
                     android:padding="@dimen/all_padding_medium">
 
@@ -265,6 +263,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="@dimen/text_view_margin"
+
                             android:text="@string/all_ship_price"/>
 
                         <TextView
@@ -315,8 +314,6 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="@dimen/text_view_margin"
-
                             android:text="@string/all_note"/>
 
                         <TextView
@@ -325,27 +322,6 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"/>
                     </RelativeLayout>
-
-                    <TextView
-                        android:id="@+id/tv_detail_history"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="bottom"
-                        android:text="@string/detail_history"/>
-
-                    <ListView
-                        android:id="@+id/lv_detail_history"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:divider="@color/transparent"
-                        android:scrollbars="none"/>
-
-                    <ImageView
-                        android:id="@+id/iv_detail_expand"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_expand_more_32dp"/>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
 
@@ -582,8 +558,8 @@
                     android:id="@+id/btn_detail_cancel_order"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:visibility="gone">
+                    android:visibility="gone"
+                    android:gravity="center">
 
                     <ImageButton
                         style="@style/btn_circle_red_border"
@@ -601,11 +577,11 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:visibility="gone"
                     android:id="@+id/btn_report_user"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:visibility="gone">
+                    android:gravity="center">
 
                     <ImageButton
                         style="@style/btn_circle_grey_border"

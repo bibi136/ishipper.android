@@ -4,7 +4,7 @@
               android:layout_height="match_parent"
               android:orientation="vertical"
               android:paddingTop="@dimen/activity_vertical_padding"
-              tools:context=".ui.fragment.UserInfoFragment">
+              tools:context=".presentation.profile.UserInfoFragment">
 
     <TextView
         android:id="@+id/tv_user_info_phone"

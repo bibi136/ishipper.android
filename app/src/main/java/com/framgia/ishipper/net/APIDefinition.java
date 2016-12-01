@@ -8,7 +8,7 @@ import com.framgia.ishipper.common.Config;
 public class APIDefinition {
 
     //        private static final String DEV_URL = "http://ishipper-hatd.herokuapp.com";
-    private static final String DEV_URL = "http://192.168.1.166:3001/";
+    private static final String DEV_URL = "http://192.168.1.152:3001/";
     private static final String PROD_URL = "";
 
     public static final String BASE_GOOGLE_MAP_API = "https://maps.googleapis.com";

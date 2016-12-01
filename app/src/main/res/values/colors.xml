@@ -12,7 +12,6 @@
     <color name="back_ground_grey">#ffeeeeee</color>
     <color name="grey_DA_lightest">#ffc3c3c3</color>
     <color name="fiveship_list_background">#ffebebeb</color>
-    <color name="fiveship_bg_dim_color">#66000000</color>
     <color name="menu_divider">#ffd6d8d7</color>
     <color name="fiveship_common_text">#ff3f454f</color>
     <color name="grey_DA_light">#ffadadad</color>
@@ -25,9 +24,7 @@
     <color name="btn_normal_background">#f9f9f9</color>
     <color name="color_status_pick">#ff7200</color>
     <color name="orange">#ff7200</color>
-    <color name="orange_dark">#ce5c01</color>
     <color name="color_status_shipping">#72c125</color>
-    <color name="drawable_tint">#bdbdbd</color>
     <color name="bg_edt_create_order_step2">#dcffffff</color>
     <color name="back_ground_light_grey">#f1f1f1</color>
     <color name="color_status_cancelled">#394b54</color>

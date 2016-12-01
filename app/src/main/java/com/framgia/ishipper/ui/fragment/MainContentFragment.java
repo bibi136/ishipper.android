@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 
 import com.framgia.ishipper.R;
 import com.framgia.ishipper.ui.adapter.MainTabAdapter;
-import com.framgia.ishipper.ui.view.CustomViewPager;
+import com.framgia.ishipper.widget.view.CustomViewPager;
 import com.framgia.ishipper.util.Const;
 
 import butterknife.BindView;

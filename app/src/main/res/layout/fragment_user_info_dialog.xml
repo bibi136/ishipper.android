@@ -96,9 +96,7 @@
     <android.support.v4.view.ViewPager
         android:id="@+id/vpg_info_dialog"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/info_dialog_viewpager">
-
-    </android.support.v4.view.ViewPager>
+        android:layout_height="@dimen/info_dialog_viewpager" />
 
     <TextView
         android:id="@+id/tv_info_dialog_close"
